@@ -1,0 +1,14 @@
+# Sample Project Configuration
+
+app:
+  name: Sample Project
+  version: 1.0.0
+  debug: true
+
+logging:
+  level: INFO
+  format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+
+features:
+  enable_caching: true
+  max_connections: 10

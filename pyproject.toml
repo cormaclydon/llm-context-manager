@@ -1,0 +1,86 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "llm-context-manager"
+version = "0.1.0"
+description = "Intelligently package codebases into optimal context windows for LLMs"
+readme = "README.md"
+license = {text = "MIT"}
+requires-python = ">=3.11"
+authors = [
+    {name = "Your Name", email = "your.email@example.com"}
+]
+keywords = ["llm", "context", "codebase", "ai", "claude", "gpt", "tokenizer"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Environment :: Console",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Topic :: Utilities",
+]
+
+dependencies = [
+    "click>=8.0.0",
+    "tiktoken>=0.5.0",
+    "pyyaml>=6.0.0",
+]
+
+[project.optional-dependencies]
+watch = ["watchdog>=3.0.0"]
+parsing = [
+    "tree-sitter>=0.21.0",
+    "tree-sitter-python>=0.21.0",
+]
+dev = [
+    "pytest>=7.0.0",
+    "pytest-cov>=4.0.0",
+    "black>=23.0.0",
+    "mypy>=1.0.0",
+    "ruff>=0.1.0",
+]
+all = [
+    "watchdog>=3.0.0",
+    "tree-sitter>=0.21.0",
+    "tree-sitter-python>=0.21.0",
+]
+
+[project.scripts]
+llm-context = "context_manager.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/yourusername/llm-context-manager"
+Repository = "https://github.com/yourusername/llm-context-manager"
+Issues = "https://github.com/yourusername/llm-context-manager/issues"
+
+[tool.setuptools.packages.find]
+where = ["."]
+
+[tool.setuptools.package-data]
+"*" = ["profiles/*.yaml"]
+
+[tool.black]
+line-length = 100
+target-version = ["py311"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+select = ["E", "F", "I", "N", "W", "UP"]
+
+[tool.mypy]
+python_version = "3.11"
+warn_return_any = true
+warn_unused_configs = true
+ignore_missing_imports = true
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+addopts = "-v --cov=context_manager --cov-report=term-missing"

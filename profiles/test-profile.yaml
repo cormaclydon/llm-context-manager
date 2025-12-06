@@ -1,0 +1,8 @@
+name: test-profile
+max_tokens: 8000
+optimal_tokens: 6400
+tokenizer_type: gpt2
+chunking_strategy: file
+include_tree: true
+output_format: markdown
+description: Test profile

@@ -1,0 +1,11 @@
+# Custom LLM Profile Template
+# Copy this file and modify for your model
+
+name: my-custom-model
+max_tokens: 8192           # Maximum context window size
+optimal_tokens: 7000       # Target token count (usually 80% of max)
+tokenizer_type: gpt2       # Options: claude, cl100k_base, gpt2, p50k_base
+chunking_strategy: file    # Options: file, hierarchical
+include_tree: true         # Include file structure tree in output
+output_format: markdown    # Options: xml, markdown, plain
+description: Custom model profile - modify this description

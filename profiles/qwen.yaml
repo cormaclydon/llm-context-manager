@@ -1,0 +1,8 @@
+name: qwen-2.5-coder
+max_tokens: 32000
+optimal_tokens: 28000
+tokenizer_type: gpt2
+chunking_strategy: file
+include_tree: true
+output_format: markdown
+description: Qwen 2.5 Coder with 32K context - good for smaller projects

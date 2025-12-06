@@ -1,0 +1,8 @@
+name: claude-sonnet-4
+max_tokens: 200000
+optimal_tokens: 160000
+tokenizer_type: claude
+chunking_strategy: hierarchical
+include_tree: true
+output_format: xml
+description: Claude Sonnet 4 with 200K context window - excellent for large codebases

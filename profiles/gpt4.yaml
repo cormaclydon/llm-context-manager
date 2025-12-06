@@ -1,0 +1,8 @@
+name: gpt-4-turbo
+max_tokens: 128000
+optimal_tokens: 100000
+tokenizer_type: cl100k_base
+chunking_strategy: hierarchical
+include_tree: true
+output_format: xml
+description: GPT-4 Turbo with 128K context window
